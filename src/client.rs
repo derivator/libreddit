@@ -12,10 +12,10 @@ use std::{io, result::Result};
 use crate::dbg_msg;
 use crate::server::RequestExt;
 
-const REDDIT_URL_BASE: &str = "https://www.reddit.com";
+const REDDIT_URL_BASE: &str = "http://localhost:8000";
 
 static CLIENT: Lazy<Client<HttpsConnector<HttpConnector>>> = Lazy::new(|| {
-	let https = hyper_rustls::HttpsConnectorBuilder::new().with_native_roots().https_only().enable_http1().build();
+	let https = hyper_rustls::HttpsConnectorBuilder::new().with_native_roots().https_or_http().enable_http1().build();
 	client::Client::builder().build(https)
 });
 

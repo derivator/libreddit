@@ -1,4 +1,4 @@
-# Libreddit
+# Libreddit ⚠️ forked to connect to localhost:8000 over insecure http ⚠️
 
 > An alternative private front-end to Reddit
 
